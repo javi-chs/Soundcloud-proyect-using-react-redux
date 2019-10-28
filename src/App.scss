@@ -1,0 +1,45 @@
+$color-main: #bca559;
+$color-header-footer: #222222;
+$color-search: #3b3b3b;
+
+
+.App {
+  text-align: center;
+}
+
+.Header{
+  height: 20vh;
+  background-color: $color-header-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+    & h1{
+      color: $color-main
+    }
+}
+
+
+
+
+
+.Body{
+  height: 75vh;
+  background-color: #f9f7f9;
+}
+
+
+
+.Footer{
+
+  height: 100%;
+  background-color: $color-header-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  & h4{
+     color: $color-main;
+  } 
+}

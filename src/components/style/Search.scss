@@ -1,0 +1,98 @@
+
+.Search{
+    height:10vh;
+    background-color:#3b3b3b ;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+  
+  
+  
+    & input{
+        all:unset;
+        height: 2em;
+        width: 20em;
+        margin-top: 20px;
+        margin-right:1em;
+        background-color: transparent;
+        color:white;
+        border: none;
+        font-size: 20px;
+   
+    &::placeholder{
+      color:white;
+      
+    }
+  
+    }
+  
+    & h2{
+      color: white;
+      margin-top: 6vh;
+      margin-left:20vw;
+      
+    }
+  }
+  
+
+
+
+
+
+
+.body{
+    background-color:#3b3b3b ;
+
+    & h1{
+        color:#bca559;
+    }
+}
+
+
+
+
+
+.images{
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 12vh;
+
+    & .Songs{
+        height: 20vh;
+        width: 20vh;
+
+    &:hover{
+        transform: scale(1.2);
+        transition: transform 1.5s ease-in-out;
+
+    }
+    }
+  
+}
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    & button{
+        margin:10px;
+        height: 10vh;
+        width:20vh;
+        background-color:#cb2226;  
+        color:white;
+        border-radius: 7%;
+        border: 2px solid #bca559;
+        font-size: 20px;
+
+        &:hover{
+
+            box-shadow: inset 0 -100px 0 -1px #bca559;
+            transition: box-shadow 1s ease-in-out;
+            color:#222222;
+            
+        }
+    
+    }
+}

@@ -1,0 +1,97 @@
+/// Archivos ////
+
+
+
+
+            /// Index.js (general) ////
+           
+           Aqui es donde se intecta todo el contenido del archivo App. 
+            tenemos las siguientes librerias importadas ya de base.
+           
+           //////////////////////////////////////////////////////
+            import React from 'react';
+            import ReactDOM from 'react-dom';
+            import './index.css';
+            import App from './App';
+            import * as serviceWorker from './serviceWorker';
+            //////////////////////////////////////////////////////
+           
+           Para implementar redux en nuestro proyecto necesitamos importar las siguentes librerias y componentes 
+            que constituyen sus dependecias.
+            
+            //////////////////////////////////////////////////////
+            import {Provider} from 'react-redux'
+            import thunk from 'redux-thunk';
+            import {createStore, applyMiddleware} from 'redux';
+            //////////////////////////////////////////////////////
+            
+            Ademas tenemos que importar todos los reducers... para ello los englobamos todos en un solo componente o funcion y los importamos.
+            import RootReducers from './reducers'; // Esto tiene que hacer match con el index.js de los reducers que llevara todo el conjunto.
+            
+            Creamos el storage a partir del conjunto de reducers. // Es como un almacen donde tendremos almacenados el estado de los componentes de nuestra App. Aquellos que lo precisen.
+            const store = createStore(RootReducers, applyMiddleware(thunk));
+            
+            
+            Le asignamos la propiedad store al Provider que se encargara de gestionar los estados, dandole como valor de esa propiedad, el objeto store que hemos creado.
+             <Provider store={store}>
+    
+                    <App />
+    
+             </Provider>
+            
+            //////////////////////////////////////////////////////
+            
+            
+            
+            
+            
+            /// App ////
+            
+            Aqui es donde va toda la estructura de nuestra aplicacion, que llamara a todos los componentes que la conforman ya sean diferentes vistas o simples componentes. Contamos con las siguentes librerias y archivos de estilo importados por defecto.
+            
+            ////////////////////////////////
+            
+            import React from 'react';
+            import './App.scss';
+            
+            ////////////////////////////////
+            
+            Importaciones de componentes
+            Son aquellos componentes que conforman nuestra aplicacion PEjemplo El header el footer VistaPeliculas....etc
+            
+            //////////////////////////////////
+            
+            import CustomFooter from './components/CustomFooter';
+            import CustomHeader from './components/CustomHeader';
+            import Search from './components/Search';
+            
+            //////////////////////////////////
+            Simplemente es una función que conecta un componente con redux store// el store que hemos generado.
+            
+            import { connect } from 'react-redux';
+            
+            It provides its connected component with the pieces of the data it needs from the store, and the functions it can use to dispatch actions to the store.
+
+            It does not modify the component class passed to it; instead, it returns a new, connected component class that wraps the component you passed in.
+            
+            //////////////////////////////////
+            Se tratan de acciones... son las encargadas de gestionar los cambios de estado del store de cada reducer.
+            en este  caso son las encargadas de realizar llamadas a la api y recoger cancion por id o canciones por tag.
+        
+            import { newSong } from './actions/newSong.js';
+            import {getSongs} from './actions/getSongs.js' 
+            
+            //////////////////////////////////
+             Las props que le pasamos son las que lleve(si es que lleva ...) más las que le pasemos nosotros a traves de los metodos 
+             mapStateToProps y mapDispatchToProps donde indicaremos que estados y que metodos seran props de App respectivamente y asi poder manejarlos dentro de este bolque.
+            function App(props) {} 
+            
+            
+            
+            
+            
+            
+            ///Reducers ////
+            /// App ////
+            /// App ////
+            
